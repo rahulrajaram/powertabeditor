@@ -2483,6 +2483,10 @@ void PowerTabEditor::createCommands()
         cycleTab(-1);
     });
 
+		myShowKeyboardCommand = new Command(tr("Show Keyboard..."),
+                                        "Window.ShowKeyboard", QKeySequence(),
+                                         this);
+
     // Help menu commands.
     myReportBugCommand = new Command(tr("Report Bug..."), "Help.ReportBug",
                                      QKeySequence(), this);
@@ -2858,6 +2862,7 @@ void PowerTabEditor::createMenus()
     myWindowMenu = menuBar()->addMenu(tr("&Window"));
     myWindowMenu->addAction(myNextTabCommand);
     myWindowMenu->addAction(myPrevTabCommand);
+    myWindowMenu->addAction(myShowKeyboardCommand);
     myWindowMenu->addSeparator();
     myWindowMenu->addAction(myMixerDockWidgetCommand);
     myWindowMenu->addAction(myInstrumentDockWidgetCommand);
@@ -3262,6 +3267,7 @@ void PowerTabEditor::enableEditing(bool enable)
     myEditViewFiltersCommand->setEnabled(enable);
     myNextTabCommand->setEnabled(enable);
     myPrevTabCommand->setEnabled(enable);
+    myShowKeyboardCommand->setEnabled(enable);
 
     // MIDI commands are always enabled if documents are open.
     if (myDocumentManager->hasOpenDocuments())

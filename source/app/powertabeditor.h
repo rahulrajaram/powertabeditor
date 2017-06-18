@@ -576,12 +576,13 @@ private:
     Command *myAddPlayerCommand;
     Command *myAddInstrumentCommand;
     Command *myPlayerChangeCommand;
-    Command *myShowTuningDictionaryCommand;
+    Command *myShowKeyboardCommand;
     Command *myEditViewFiltersCommand;
 
     QMenu *myWindowMenu;
     Command *myNextTabCommand;
     Command *myPrevTabCommand;
+    Command *myShowTuningDictionaryCommand;
     Command *myMixerDockWidgetCommand;
     Command *myInstrumentDockWidgetCommand;
 
